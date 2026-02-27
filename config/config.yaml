@@ -1,0 +1,65 @@
+# AI行业日报系统配置文件
+
+# LLM配置 (使用Gemini)
+llm:
+  provider: "gemini"
+  model: "gemini-2.5-flash"  # 可选: gemini-2.0-flash, gemini-2.5-flash
+  api_key: "${GEMINI_API_KEY}"  # 从环境变量读取
+  max_tokens: 4096
+  temperature: 0.7
+
+# 调度配置
+scheduler:
+  enabled: true
+  run_time: "17:30"  # 每日运行时间
+  timezone: "Asia/Shanghai"
+
+# 输出配置
+output:
+  base_dir: "data/reports"
+  format:
+    - "markdown"
+    - "text"
+  date_format: "%Y-%m-%d"
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "logs/daily_news.log"
+  rotation: "10 MB"
+  retention: "30 days"
+
+# 通知配置
+notifications:
+  email:
+    enabled: true
+    smtp_server: "smtp.163.com"
+    smtp_port: 465
+    use_ssl: true
+    username: "${EMAIL_USERNAME}"  # 发件人163邮箱
+    password: "${EMAIL_PASSWORD}"  # 163邮箱授权码
+    recipients:
+      - "1628577448@qq.com"
+      - "1063265960@qq.com"
+  
+  dingtalk:
+    enabled: false
+    webhook_url: ""
+    secret: ""
+
+# 数据收集配置
+collection:
+  request_interval: 5  # 请求间隔(秒)
+  timeout: 30  # 请求超时(秒)
+  max_retries: 3
+  user_agents:
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+
+# 内容过滤
+content_filter:
+  min_content_length: 100  # 最小内容长度
+  max_age_hours: 24  # 最大内容年龄(小时)
+  keywords_required: []  # 必须包含的关键词
+  keywords_blocked: []  # 需过滤的关键词

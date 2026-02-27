@@ -1,0 +1,150 @@
+# 数据源配置文件
+
+# 公众号列表 (通过搜狗微信搜索)
+wechat_accounts:
+  - name: "新智元"
+    id: "AI_era"
+    enabled: true
+  - name: "机器之心"
+    id: "almosthuman2014"
+    enabled: true
+  - name: "量子位"
+    id: "QbitAI"
+    enabled: true
+  - name: "AI科技评论"
+    id: "aitechtalk"
+    enabled: true
+  - name: "AI修猫Prompt"
+    id: "AI_xiucat"
+    enabled: true
+  - name: "GitHubDaily"
+    id: "GitHubDaily"
+    enabled: true
+  - name: "数字生命卡兹克"
+    id: "DigitalLifeKazik"
+    enabled: true
+
+# 公司/组织官方渠道
+official_sources:
+  anthropic:
+    blog: "https://www.anthropic.com/news"
+    github: "https://github.com/anthropics"
+    enabled: true
+  
+  google:
+    blog: "https://blog.google/technology/ai/"
+    deepmind: "https://deepmind.google/discover/blog/"
+    github: "https://github.com/google-deepmind"
+    enabled: true
+  
+  meta:
+    blog: "https://ai.meta.com/blog/"
+    github: "https://github.com/facebookresearch"
+    enabled: true
+  
+  qwen:
+    blog: "https://qwenlm.github.io/"
+    github: "https://github.com/QwenLM"
+    huggingface: "https://huggingface.co/Qwen"
+    enabled: true
+  
+  zhipu:
+    blog: "https://www.zhipuai.cn/news"
+    github: "https://github.com/THUDM"
+    enabled: true
+  
+  deepseek:
+    blog: "https://www.deepseek.com/"
+    github: "https://github.com/deepseek-ai"
+    huggingface: "https://huggingface.co/deepseek-ai"
+    enabled: true
+
+# GitHub热门仓库监控
+github:
+  trending:
+    enabled: true
+    language: ""  # 空表示所有语言
+    since: "daily"  # daily, weekly, monthly
+    topics:
+      - "artificial-intelligence"
+      - "machine-learning"
+      - "deep-learning"
+      - "llm"
+      - "large-language-models"
+      - "agent"
+      - "multimodal"
+  
+  repositories:
+    # 重点关注的仓库
+    - "openai/openai-python"
+    - "anthropics/anthropic-sdk-python"
+    - "google-deepmind/gemma"
+    - "QwenLM/Qwen"
+    - "deepseek-ai/DeepSeek-LLM"
+    - "langchain-ai/langchain"
+    - "microsoft/autogen"
+    - "huggingface/transformers"
+
+# RSS订阅源
+rss_feeds:
+  - name: "Hacker News - AI"
+    url: "https://hnrss.org/newest?q=AI+OR+LLM+OR+GPT"
+    enabled: true
+  
+  - name: "ArXiv CS.AI"
+    url: "http://export.arxiv.org/rss/cs.AI"
+    enabled: true
+  
+  - name: "ArXiv CS.CL"
+    url: "http://export.arxiv.org/rss/cs.CL"
+    enabled: true
+  
+  - name: "AI Weekly"
+    url: "https://aiweekly.co/feed"
+    enabled: false
+
+# 内容分类关键词
+categories:
+  大模型进展:
+    - "GPT"
+    - "Claude"
+    - "Gemini"
+    - "Llama"
+    - "Qwen"
+    - "DeepSeek"
+    - "大模型"
+    - "LLM"
+    - "语言模型"
+  
+  多模态突破:
+    - "多模态"
+    - "视觉"
+    - "图像"
+    - "视频"
+    - "语音"
+    - "Vision"
+    - "Multimodal"
+  
+  智能体生态:
+    - "Agent"
+    - "智能体"
+    - "自主"
+    - "工具调用"
+    - "Function Calling"
+    - "MCP"
+  
+  开源动态:
+    - "开源"
+    - "GitHub"
+    - "开放"
+    - "Apache"
+    - "MIT"
+    - "Open Source"
+  
+  商业应用:
+    - "商业"
+    - "企业"
+    - "应用"
+    - "产品"
+    - "发布"
+    - "上线"
