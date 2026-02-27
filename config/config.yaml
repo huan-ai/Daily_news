@@ -11,7 +11,7 @@ llm:
 # 调度配置
 scheduler:
   enabled: true
-  run_time: "17:30"  # 每日运行时间
+  run_time: "17:18"  # 每日运行时间
   timezone: "Asia/Shanghai"
 
 # 输出配置
